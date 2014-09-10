@@ -97,8 +97,8 @@ public class VarastoTest {
         // koska negatiivista määrää ei voi lisätä,
         // saldoa ei muuteta
         // pitää olla 3, mutta rikottu jenkins-harjoittelussa
-        // korjattu nyt
-        assertEquals(3, varasto.getSaldo(), vertailuTarkkuus);
+        // EI korjattu nyt
+        assertEquals(4, varasto.getSaldo(), vertailuTarkkuus);
     }
 
     @Test
