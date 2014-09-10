@@ -98,7 +98,7 @@ public class VarastoTest {
         // saldoa ei muuteta
         // pitää olla 3, mutta rikottu jenkins-harjoittelussa
         // korjattu nyt
-        assertEquals(2, varasto.getSaldo(), vertailuTarkkuus);
+        assertEquals(3, varasto.getSaldo(), vertailuTarkkuus);
     }
 
     @Test
