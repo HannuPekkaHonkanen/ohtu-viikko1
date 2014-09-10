@@ -90,13 +90,14 @@ public class VarastoTest {
     }
     
     @Test
-    public void lisaysLaitetaanNegatiivinenMaarau() {
+    public void lisaysLaitetaanNegatiivinenMaara() {
         varasto.lisaaVarastoon(3);
         varasto.lisaaVarastoon(-1);
 
         // koska negatiivista määrää ei voi lisätä,
         // saldoa ei muuteta
-        assertEquals(3, varasto.getSaldo(), vertailuTarkkuus);
+        // pitää olla 3, mutta rikottu jenkins-harjoittelussa
+        assertEquals(4, varasto.getSaldo(), vertailuTarkkuus);
     }
 
     @Test
