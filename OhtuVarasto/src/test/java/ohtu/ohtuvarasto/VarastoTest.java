@@ -66,6 +66,40 @@ public class VarastoTest {
     }
 
     @Test
+    public void lisaysLaitetaanEnemmanKuinMahtuu() {
+        varasto.lisaaVarastoon(18);
+
+        // saldon pitäisi olla sama kuin varaston koko
+        assertEquals(10, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void ottaminenOtetaanEnemmanKuinOn() {
+        varasto.otaVarastosta(12);
+
+        // saldon pitäisi olla sama kuin tyhjän varaston eli 0
+        assertEquals(0, varasto.getSaldo(), vertailuTarkkuus);
+    }
+    
+    @Test
+    public void ottaminenOtetaanNegatiivinenMaara() {
+        double otettuMaara=varasto.otaVarastosta(-2);
+
+        // koska negatiivista määrää ei voi ottaa, palauttaa metodi arvon 0
+        assertEquals(0, otettuMaara, vertailuTarkkuus);
+    }
+    
+    @Test
+    public void lisaysLaitetaanNegatiivinenMaarau() {
+        varasto.lisaaVarastoon(3);
+        varasto.lisaaVarastoon(-1);
+
+        // koska negatiivista määrää ei voi lisätä,
+        // saldoa ei muuteta
+        assertEquals(3, varasto.getSaldo(), vertailuTarkkuus);
+    }
+
+    @Test
     public void konstr() {
         varasto = new Varasto(-1);
         varasto = new Varasto(0);
